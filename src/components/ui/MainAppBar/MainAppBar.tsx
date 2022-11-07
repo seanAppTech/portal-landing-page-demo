@@ -34,7 +34,7 @@ export default function MainAppBar() {
             <MenuIcon />
           </IconButton>
           <BathtubIcon />
-          <Typography variant="h6" component="div" sx={{ paddingLeft: '10px' }}>
+          <Typography variant="h6" component="div" sx={{ paddingLeft: '10px', display: { xs: 'none', md: 'block' } }}>
             Splish Splash Retail
           </Typography>
           <Box
@@ -46,15 +46,20 @@ export default function MainAppBar() {
             <InvoiceButton 
                 variant="outlined" 
                 startIcon={<AddIcon />} 
-                size="large"
+
                 color="secondary"
-                
             >
                 Invoice
             </InvoiceButton>
           </Box>
 
-          <Typography variant="h6" component="div">Marko Joanna</Typography>
+          <Typography 
+            variant="h6" 
+            component="div" 
+            sx={{display: { xs: 'none', md: 'block' }}}
+          >
+            Marko Joanna
+          </Typography>
           <Avatar 
             sx={{
                 backgroundColor: 'white',
@@ -104,5 +109,8 @@ const InvoiceButton = styled(Button)({
         borderColor: '#fff',
         color: '#fff',
         opacity: 0.7
+    }, 
+    '@media screen and (max-width: 720px)': {
+      maxWidth: '120px'
     }
 });
